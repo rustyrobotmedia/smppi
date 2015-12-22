@@ -113,7 +113,7 @@ function sms_send_gsm($path_outgoing){
 			
 			$file_src = "To: +{$phonenumber}{$add}\n\n{$msg}";
 			
-			if(DEBUG == 1) log2file("pcntl_send", "echo \"{$file_src}\" > {$path}sms{$id}");
+			if(DEBUG == 1) log2file("pcntl_send", "echo \"{$file_src}\" > {$path_outgoing}sms{$id}");
 			file_put_contents($path_outgoing."sms{$row['id']}", $file_src);
 			$full_msg = $db->real_escape_string($file_src);
 			$update = "update sms set full_msg = '{$full_msg}', dt=now(), process = 1 where id = {$id}";
