@@ -1,5 +1,8 @@
-Smstools web interface
+Smstools Web Interface
+Project's blog: http://smppi.net/
 
-default webuser
+Default webuser
+
 login: admin
+
 password: admin
