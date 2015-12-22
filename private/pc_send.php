@@ -117,7 +117,9 @@ function sms_send_gsm($path_outgoing){
 			file_put_contents($path_outgoing."sms{$row['id']}", $file_src);
 			$full_msg = $db->real_escape_string($file_src);
 			$update = "update sms set full_msg = '{$full_msg}', dt=now(), process = 1 where id = {$id}";
-			$db->query($update);
+			if(!$db->query($update)){
+				log2file("mysql_error",$db->error);
+			}
 		}
 	}
 	
@@ -166,7 +168,9 @@ function sms_send_smpp($smpp_hosts, $smpp_port, $smpp_login, $smpp_password, $sm
 			
 			if(DEBUG == 1) log2file("pcntl_send smpp", $result_sms);
 			$update = "update sms set full_msg = '{$result_sms}', dt=now(), process = 1 where id = {$id}";
-			$db->query($update);
+			if(!$db->query($update)){
+				log2file("mysql_error",$db->error);
+			}
 			
 		}
 	}

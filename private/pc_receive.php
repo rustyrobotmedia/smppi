@@ -116,13 +116,17 @@ function wait_read_gsm($path_incoming,$path_received){
 			$msg = $db->real_escape_string($msg);
 			
 			if($msg != "SMS STATUS REPORT"){
-				$insert = "insert into sms set dt = from_unixtime(unix_timestamp('{$dt}')), phonenumber = '{$phone}', msg=trim('{$msg}'), full_msg = '{$full_msg}';";
+				$insert = "insert into sms set
+						dt = from_unixtime(unix_timestamp('{$dt}')),
+						phonenumber = '{$phone}',
+						msg = '{$msg}',
+						full_msg = '{$full_msg}';";
 				if(DEBUG == 1) log2file("pcntl_receive", $insert);
 				if($db->query($insert)){
 					rename($path_incoming.$file, $path_received.$file);
 				}
 				else{
-					log2file("mysql_error".$db->query);
+					log2file("mysql_error",$db->error);
 				}
 			}
 			else{
@@ -134,7 +138,7 @@ function wait_read_gsm($path_incoming,$path_received){
 					rename($path_incoming.$file, $path_received.$file);
 				}
 				else{
-					log2file("mysql_error".$db->query);
+					log2file("mysql_error",$db->error);
 				}
 			}
 		}
