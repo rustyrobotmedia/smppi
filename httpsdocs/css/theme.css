@@ -1,0 +1,58 @@
+body {
+	padding-top: 00px;
+	padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+	position: static;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.theme-showcase>p>.btn {
+	margin: 5px 0;
+}
+
+.date-10{
+	width: 10%;
+	word-wrap:normal;
+	white-space:nowrap;
+}
+
+.date-20{
+	width: 20%;
+	word-wrap:normal;
+	white-space:nowrap;
+}
+
+.phone-10{
+	width: 10%;
+}
+
+.phone-20{
+	width: 20%;
+}
+
+.sent-10{
+	width: 10%;
+}
+
+.sent-20{
+	width: 20%;
+}
+
+.msg-50{
+	width: 50%;
+}
+
+.msg-60{
+	width: 60%;
+}
+
+.msg-70{
+	width: 70%;
+}
+
+.msg-80{
+	width: 80%;
+}

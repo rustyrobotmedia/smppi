@@ -1,0 +1,12 @@
+<Files api.php>
+ order deny,allow
+ deny from all
+ allow from 127.0.0.1
+</Files>
+
+RewriteEngine On
+
+RewriteBase /
+
+RewriteRule ^api/$ /api.php [QSA]
+RewriteRule ^([a-zA-Z0-9]+)(/?)$ /?part=$1 [QSA]
