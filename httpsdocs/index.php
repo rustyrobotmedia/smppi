@@ -171,8 +171,8 @@ if($part == "adm" && in_array("SMS_ADMIN", $user_rights)){
 	$content_page .= $user_error;
 	
 
-	$label_send = ($csms->check_pid_file("sms_send")) ? "<span class=\"label label-success\">".PC_SEND_ON."</span>" : "<span class=\"label label-danger\">".PC_SEND_OFF."</span>";
-	$label_receive = ($csms->check_pid_file("sms_receive")) ? "<span class=\"label label-success\">".PC_RECEIVE_ON."</span>" : "<span class=\"label label-danger\">".PC_RECEIVE_OFF."</span>";
+	$label_send = ($csms->check_pid_file("sms_send")) ? "<span class=\"label label-success\">".PC_SENDING_ON."</span>" : "<span class=\"label label-danger\">".PC_SENDING_OFF."</span>";
+	$label_receive = ($csms->check_pid_file("sms_receive")) ? "<span class=\"label label-success\">".PC_RECEIVING_ON."</span>" : "<span class=\"label label-danger\">".PC_RECEIVING_OFF."</span>";
 		
 	$content_page .= "
 			<div class=\"panel panel-default\">

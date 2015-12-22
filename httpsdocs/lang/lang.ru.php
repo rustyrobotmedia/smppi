@@ -18,16 +18,16 @@ define("THEAD_RIGHTS", "Права");
 define("SENT_YES", "Отправлено");
 define("SENT_NO", "В процессе");
 define("DELIVERED", "Доставлено");
-define("PC_SEND_ON", "Отправка включена");
-define("PC_SEND_OFF", "Отправка выключена");
-define("PC_RECEIVE_ON", "Прием включен");
-define("PC_RECEIVE_OFF", "Прием выключен");
+define("PC_SENDING_ON", "Отправка включена");
+define("PC_SENDING_OFF", "Отправка выключена");
+define("PC_RECEIVING_ON", "Прием включен");
+define("PC_RECEIVING_OFF", "Прием выключен");
 define("BTN_CREATE_USER", "Создать пользователя");
 
 define("AUTHORIZATION", "Авторизация");
 define("BTN_AUTH", "Войти");
 
-define("NAVIGATION", "Авторизация");
+define("NAVIGATION", "Навигация");
 define("INCOMING", "Входящие");
 define("OUTGOING", "Исходящие");
 define("BTN_EXIT", "Выйти");
@@ -58,3 +58,9 @@ define("ACCESS_DENIED", "Нет доступа к интерфейсу");
 define("WRONG_USERNAME_OR_PASSWORD", "Неправильный логин или пароль");
 define("ACCESS_DENIED_BY_LOGIN", "Нет доступа к интерфейсу по логину");
 
+$rights_descr = array(
+		"SMS_ACCESS" => "Доступ к веб-интерфейсу SMS",
+		"SMS_ADMIN" => "Доступ к интерфейсу управления",
+		"SMS_APISEND" => "Доступ к отправке SMS через API",
+		"SMS_WEBSEND" => "Доступ к отправке SMS через веб",
+);

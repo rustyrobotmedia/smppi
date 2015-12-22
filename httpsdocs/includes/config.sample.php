@@ -9,8 +9,8 @@ $dbuser = "";
 $dbpassword = "";
 $dbname = "smstools";
 
-$site_lang = "ru";
+$site_lang = "ru"; // en|ru # 
 $title = "Smstools web interface";
 $title_head = "Smstools web interface";
 
-$demo_number = "";
+$demo_number = ""; // replace all phonenumbers in web interface

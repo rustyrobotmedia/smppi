@@ -9,9 +9,11 @@
 class SmppiSite {
 
 	function __construct() {
-		global $db;
+		global $db,$rights_descr;
 		
 		$this->db = $db;
+		
+		$this->rights_descr = $rights_descr;
 
 	}
 	
@@ -307,6 +309,9 @@ class SmppiSite {
 		$return = array();
 		if($result = $this->db->query($select)){
 			while($row = $result->fetch_assoc()){
+				if(!empty($this->rights_descr[$row['right']])){
+					$row['descr'] = $this->rights_descr[$row['right']];
+				}
 				$return[] = $row;
 			}
 			return $return;
