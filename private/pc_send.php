@@ -52,8 +52,9 @@ elseif($act == "start"){
 			require_once("config.php");
 			require_once("smpp/smppclient.class.php");
 			require_once("smpp/sockettransport.class.php");
-			require_once("db.php");
-			require_once("log.php");
+			// move to loop
+			//require_once("db.php");
+			//require_once("log.php");
 			
 		}
 		else{
@@ -73,6 +74,10 @@ elseif($act == "start"){
 	
 	// loop forever performing tasks
 	while (true) {
+		
+		// from fork
+		require_once("db.php");
+		require_once("log.php");
 		
 		sms_send_gsm(PATH_OUTGOUING);
 		check_sent_gsm(PATH_SENT);

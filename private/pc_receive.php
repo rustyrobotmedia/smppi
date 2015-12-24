@@ -52,8 +52,9 @@ elseif($act == "start"){
 			require_once("config.php");
 			require_once("smpp/smppclient.class.php");
 			require_once("smpp/sockettransport.class.php");
-			require_once("db.php");
-			require_once("log.php");
+			// move to loop
+			//require_once("db.php");
+			//require_once("log.php");
 			
 		}
 		else{
@@ -73,6 +74,10 @@ elseif($act == "start"){
 	
 	// loop forever performing tasks
 	while (true) {
+		
+		// from fork
+		require_once("db.php");
+		require_once("log.php");
 		
 		wait_read_gsm(PATH_INCOMING,PATH_RECEIVED);
 		//wait_read_smpp($smpp_hosts,$smpp_port,$smpp_login,$smpp_password,10000); // TODO
