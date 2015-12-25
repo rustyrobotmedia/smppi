@@ -5,7 +5,7 @@ Smstools Web Interface
 
 Default username: **admin**
 
-and password: **admin**
+Default password: **admin**
 
 Use console
 ```sh

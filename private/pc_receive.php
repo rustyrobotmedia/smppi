@@ -49,10 +49,10 @@ elseif($act == "start"){
 		if(file_put_contents($pid_file, $spid)){
 			print "start $spid\n";
 			
-			require_once("config.php");
-			require_once("smpp/smppclient.class.php");
-			require_once("smpp/sockettransport.class.php");
 			// move to loop
+			//require_once("config.php");
+			//require_once("smpp/smppclient.class.php");
+			//require_once("smpp/sockettransport.class.php");
 			//require_once("db.php");
 			//require_once("log.php");
 			
@@ -76,6 +76,9 @@ elseif($act == "start"){
 	while (true) {
 		
 		// from fork
+		require_once("config.php");
+		require_once("smpp/smppclient.class.php");
+		require_once("smpp/sockettransport.class.php");
 		require_once("db.php");
 		require_once("log.php");
 		
